@@ -1,0 +1,512 @@
+/* Google font import for 3rd party font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  /* CSS variables with fallback usage later */
+  --page-bg: hsl(210, 40%, 96%);
+  --card-bg: #ffffff;
+  --text-main: rgb(30, 41, 59);
+  --accent: orange;
+  --accent-2: rgba(59, 130, 246, 0.85);
+  --border-main: #cbd5e1;
+  --soft-shadow: color-mix(in srgb, white 65%, #93c5fd 35%);
+  --wide-gamut-accent: color(display-p3 0.20 0.55 0.95 / 0.95);
+  --fallback-accent: #3b82f6;
+}
+
+/* General page styling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--page-bg, #f4f7fb); /* variable with fallback */
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, white 80%, #dbeafe 20%),
+    #f8fafc
+  );
+  color: var(--text-main, #1e293b);
+  margin: 0;
+  min-width: 320px;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--card-bg, white);
+  border-bottom-style: solid;
+  border-bottom-color: var(--border-main, #ccc);
+  border-bottom-width: 2px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: var(--accent, orange);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0.12rem;
+  border-radius: 999px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 165, 0, 0.12);
+  text-decoration: underline;
+}
+
+nav a:active {
+  background-color: rgba(255, 165, 0, 0.25);
+  transform: scale(0.98);
+}
+
+/* Header */
+header {
+  position: relative;
+  background-color: var(--card-bg, #fff);
+  width: 85%;
+  max-width: 900px;
+  min-width: 280px;
+  margin: 1.25rem auto 1.25rem auto; /* short margin */
+  padding: 1.2rem 1.5rem 1.2rem 1.5rem; /* short padding */
+  border-style: solid;
+  border-color: var(--border-main, #cbd5e1);
+  border-width: 2px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px var(--soft-shadow, rgba(0, 0, 0, 0.08));
+  text-align: center;
+}
+
+h1 {
+  color: var(--wide-gamut-accent, var(--fallback-accent, #2563eb));
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  color: hsl(214, 72%, 38%); /*relative unit: %*/
+  text-align: left;
+}
+
+h3 {
+  color: #475569;
+  text-align: center;
+}
+
+/* Main container */
+main {
+  width: 88%;
+  max-width: 1000px;
+  min-width: 280px;
+  margin: auto; /* auto margin */
+}
+
+/* Sections as cards */
+section,
+div,
+footer {
+  background-color: var(--card-bg, #fff);
+  border-style: solid;
+  border-color: var(--border-main, #cbd5e1);
+  border-width: 2px;
+  border-radius: 12px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Use absolute units too */
+hr {
+  border: 0;
+  height: 3px;          /* px absolute unit */
+  background-color: #94a3b8;
+  width: 95%;
+  margin: 18px auto;    /* px absolute unit */
+}
+
+/* Attendance list */
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+ol li {
+  margin-bottom: 0.35rem;
+}
+
+/* Meeting questions/details */
+details {
+  background-color: rgba(59, 130, 246, 0.08);
+  border-style: solid;
+  border-color: var(--accent-2, rgba(59,130,246,.85));
+  border-width: 1.5px;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+summary:hover {
+  color: #1d4ed8;
+}
+
+summary:active {
+  color: #1e3a8a;
+}
+
+/* Note box */
+div p strong {
+  color: red;
+}
+
+/* Media section */
+#media {
+  position: static;
+}
+
+#media img {
+  display: block;
+  width: 60%;
+  max-width: 500px;
+  min-width: 200px;
+  height: auto;
+  margin: 0.75rem auto 1rem auto;
+  border-style: solid;
+  border-color: #94a3b8;
+  border-width: 0.15in; /* absolute unit: in */
+  border-radius: 2mm; /* absolute unit: mm */
+}
+
+audio,
+video {
+  display: block;
+  width: 70%;
+  max-width: 520px;
+  min-width: 220px;
+  margin: 0.75rem auto;
+}
+
+/* Footer form */
+footer {
+  margin: 1.5rem auto 2rem auto;
+  width: 88%;
+  max-width: 1000px;
+}
+
+fieldset {
+  border-style: solid;
+  border-color: #60a5fa;
+  border-width: 3px;
+  border-radius: 14px;
+  padding: 1rem 1.2rem 1rem 1.2rem;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[list],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 42rem; /* relative unit: rem */
+  padding: 0.6rem 0.75rem;
+  border-style: solid;
+  border-color: #94a3b8;
+  border-width: 2px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 8em; /* relative unit: em */
+  resize: vertical;
+}
+
+/* inline + inline-block examples */
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  width: auto;
+  margin-right: 0.35rem;
+}
+
+button {
+  display: inline-block;
+  background-color: var(--accent, orange);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  width: 8rem;
+  min-width: 100px;
+  height: 2.8rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ea580c;
+}
+
+button:active {
+  background-color: #c2410c;
+}
+
+/* display: none example */
+video source {
+  display: none;
+}
+
+/* Link styling */
+a {
+  color: #0f766e;
+}
+
+a:hover {
+  color: #115e59;
+}
+
+a:active {
+  color: #134e4a;
+}
+
+/* Flexbox layout
+   main has many children, so this satisfies > 2 children */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* Grid layout for form fields */
+form fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1.1rem;
+  align-items: start;
+}
+
+/* Make text elements span both columns for cleaner layout */
+form fieldset > p,
+form fieldset > br,
+form fieldset > button,
+form fieldset > textarea {
+  grid-column: 1 / -1;
+}
+
+/* Improve checkbox/radio flow */
+input[type="checkbox"] + text,
+input[type="radio"] + text {
+  display: inline;
+}
+
+/* Position examples */
+header {
+  position: relative;
+}
+
+nav {
+  position: sticky;
+}
+
+/* Another position example */
+footer {
+  position: relative;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  header,
+  main,
+  footer {
+    width: 94%;
+  }
+
+  #media img,
+  audio,
+  video {
+    width: 85%;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 650px) {
+  form fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    padding: 0.6rem;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.45rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  button {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  #media img,
+  audio,
+  video {
+    width: 100%;
+  }
+}
+
+
+/* Selector section*/
+
+/* Universal selector */
+* {
+  box-sizing: border-box;
+}
+
+/* Class selector */
+.page-header {
+  outline: 0.12rem solid rgba(59, 130, 246, 0.15);
+}
+
+/* ID selector */
+#media {
+  scroll-margin-top: 5rem;
+}
+
+/* Element selector */
+video {
+  background-color: #e2e8f0;
+}
+
+/* Attribute selector */
+a[href^="https"] {
+  font-weight: 1000;
+}
+
+input[name="name"] {
+  background-color: #ff0000;
+}
+
+/* Selector list */
+h1,
+h2 {
+  letter-spacing: 0.02em;
+}
+
+/* Descendant combinator */
+section p {
+  color: var(--text-main, #1e293b);
+}
+
+/* Child combinator */
+nav > a {
+  border-radius: 999px;
+}
+
+/* General sibling combinator */
+h2 ~ ol {
+  background-color: rgba(59, 130, 246, 0.05);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+}
+
+/* Adjacent sibling combinator */
+h2 + ul {
+  border-left: 4px solid #93c5fd;
+  padding-left: 1rem;
+}
+
+/* Combining two selector */
+button.submit-btn {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Pseudo-class selector */
+button.submit-btn:hover {
+  filter: brightness(0.96);
+}
+
+/* :has() selector */
+section:has(img) {
+  background-color: rgba(14, 165, 233, 0.06);
+}
+
+
+fieldset:has(textarea) {
+  background-color: #f8fbff;
+}
+
+/* Nested selectors */
+.note-box {
+  border-left: 0.3rem solid orange;
+
+  & p {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  & a {
+    text-decoration: underline;
+  }
+
+  & strong {
+    color: #b91c1c;
+  }
+}
+
+.page-header {
+  & h1 {
+    text-transform: uppercase;
+  }
+
+  & h3 {
+    font-style: italic;
+  }
+}
